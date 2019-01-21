@@ -6,3 +6,14 @@ $(function(){
 
 	});
 });
+
+$(function() {
+	$('#closing').on("click", function () {
+	    $(this).parent().hide();
+	    $(this).parent().parent().find('#' + $(this).parent().attr('class')).show();
+	});
+});
+
+function slide_div(toHide, toAppear) {
+
+}
