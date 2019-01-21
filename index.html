@@ -1,58 +1,151 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+<head>
     <meta charset="utf-8">
     <title>The Memory Game</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-  </head>
-  <body>
-    <div class="landing_page">
-      <h1>Welcome to the Memory Game</h1>
-      <form>
-        <input type="checkbox" name="numbers" value="Numbers"> Numbers
-        <input type="checkbox" name="letters" value="Letters"> Letters <br>
-
-        <input type="range" min="1" max="5" value="5"><br>
-        <div>
-          estimated time:
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+          integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="scripts.js"></script>
+</head>
+<body>
+<div id="fixed-content">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" id="navbar">
+        <a class="navbar-brand" href="#">The Memory Game</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#rulesModal">
+                        <i class="far fa-question-circle"></i>
+                    </button>
+                </li>
+            </ul>
         </div>
+    </nav>
 
-        <input type="submit" value="Submit">
-      </form>
+    <div class="modal" tabindex="-1" role="dialog" id="rulesModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">How the Game Works</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="game">
-      <div class="progress">
+</div>
 
-      </div>
-      <div class="memory">
+<div id="landing-page">
+    <h1>Welcome to the Memory Game</h1>
+    <h3>Before you start:</h3>
+    <h4>Object Type:</h4>
+    <div class="container">
+        <h2>Normal</h2>
+        <div class="row form-group product-chooser">
+
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <div class="product-chooser-item selected">
+                    <img src="http://renswijnmalen.nl/bootstrap/desktop_mobile.png"
+                         class="img-rounded col-xs-4 col-sm-4 col-md-12 col-lg-12" alt="Mobile and Desktop">
+                    <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
+                        <span class="title">Mobile and Desktop</span>
+                        <span class="description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</span>
+                        <input type="radio" name="product" value="mobile_desktop" checked="checked">
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <div class="product-chooser-item">
+                    <img src="http://renswijnmalen.nl/bootstrap/desktop.png"
+                         class="img-rounded col-xs-4 col-sm-4 col-md-12 col-lg-12" alt="Desktop">
+                    <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
+                        <span class="title">Desktop</span>
+                        <span class="description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</span>
+                        <input type="radio" name="product" value="desktop">
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <div class="product-chooser-item">
+                    <img src="http://renswijnmalen.nl/bootstrap/mobile.png"
+                         class="img-rounded col-xs-4 col-sm-4 col-md-12 col-lg-12" alt="Mobile">
+                    <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
+                        <span class="title">Mobile</span>
+                        <span class="description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</span>
+                        <input type="radio" name="product" value="mobile">
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="game">
+    <div class="progress">
+
+    </div>
+    <div class="memory">
         <!-- Placeholder -->
         <progress value="22" max="100">
-        </progress><br>
+        </progress>
+        <br>
         <div class="images">
 
         </div>
 
-      </div>
-      <div class="remember">
+    </div>
+    <div class="remember">
         Enter what you saw:<br>
         <input type="text">
-      </div>
-
     </div>
-    <div class="result">
-      <h1>Your results</h1>
-      <div class="left">
+
+</div>
+<div class="result">
+    <h1>Your results</h1>
+    <div class="left">
         <img src=# alt="Results">
-      </div>
-      <div class="right">
-        You got ?/? correct
-      </div>
     </div>
-    <input type="button" value="Try Again">
-    <input type="button" value="Show More">
+    <div class="right">
+        You got ?/? correct
+    </div>
+</div>
+<input type="button" value="Try Again">
+<input type="button" value="Show More">
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-  </body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+</body>
 </html>
