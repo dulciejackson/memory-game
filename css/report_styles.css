@@ -1,3 +1,5 @@
+/* No conflicts should arise with other CSS names */
+
 .canvas-container {
     height: 300px;
     margin: auto;
@@ -9,14 +11,11 @@
     padding: 0%;
 }
 
-.mg {
-    margin-top: 13%;
-}
-
-p {
-    margin: 1%;
-}
 .wrapper-details {
     font-size: 14px;
+    margin-top: 8%;
+}
+
+#report-section {
     margin-top: 8%;
 }
