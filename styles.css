@@ -42,12 +42,13 @@ div.container {
   text-align: center;
   width: inherit;
   padding: 0px;
-  margin: 0px;
+  margin: 0 auto;
   max-width: 100%;
 }
 
 #landing-page {
   height: 100%;
+  position: relative;
 }
 
 #landing-content {
@@ -56,6 +57,10 @@ div.container {
   padding-right: 10%;
   padding-bottom: 5%;
   text-align: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60%;
 }
 
 #background-image {
