@@ -4,15 +4,19 @@
 <head>
   <meta charset="utf-8">
   <title>The Memory Game</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script type="text/javascript" language="javascript" src="./scripts.js"></script>
+
+  <!--CSS-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
         integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/report_styles.css">
+  <link rel="stylesheet" href="image-picker/image-picker.css">
+
 </head>
 <body>
+
 <div id="fixed-content">
   <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow" id="navbar">
     <a class="navbar-brand" href="#">The Memory Game</a>
@@ -58,59 +62,30 @@
   </div>
 </div>
 
-<div id="landing-page">
-  <h1>Welcome to the Memory Game</h1>
-  <h4>Choose the type of thing you want to memorise</h4>
-  <div class="container">
-    <div class="row form-group product-chooser">
-
-      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-        <div class="product-chooser-item selected same-height">
-          <img src="http://kit8.net/images/detailed/1/Startup.png"
-               class="img-rounded col-xs-4 col-sm-4 col-md-12 col-lg-12 inner-picture" alt="Images">
-          <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
-            <span class="title">Images</span>
-            <input type="radio" name="product" value="mobile_desktop" checked="checked">
-          </div>
-          <div class="clear"></div>
+<div class="container" id="landing-page">
+    <div class="row" style="display: block;">
+        <div class="display-4">
+          Welcome to the memory game
         </div>
-      </div>
-
-      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-        <div class="product-chooser-item same-height">
-          <img src="https://media.glassdoor.com/sqll/432240/door-number-3-squarelogo-1475676434255.png"
-               class="img-rounded col-xs-4 col-sm-4 col-md-12 col-lg-12 inner-picture" alt="Numbers">
-          <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
-            <span class="title">Numbers</span>
-            <input type="radio" name="product" value="desktop">
-          </div>
-          <div class="clear"></div>
-        </div>
-      </div>
-
-      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-        <div class="product-chooser-item same-height">
-          <img src="https://i.ytimg.com/vi/n2IHSJJU24w/maxresdefault.jpg"
-               class="img-rounded col-xs-4 col-sm-4 col-md-12 col-lg-12 inner-picture" alt="Words">
-          <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
-            <span class="title">Words</span>
-            <input type="radio" name="product" value="mobile">
-          </div>
-          <div class="clear"></div>
-        </div>
-      </div>
-
+        <p>Select an item to test your memory</p>
     </div>
+    <div class="row" style="display: block">
+        <div class="wrapper-selection">
+            <select class="image-picker">
+                <option value=""></option>
+                <option data-img-src="http://kit8.net/images/detailed/1/Startup.png" value="1">Images</option>
+                <option data-img-src="https://media.glassdoor.com/sqll/432240/door-number-3-squarelogo-1475676434255.png" value="2">Text</option>
+                <option data-img-src="https://i.ytimg.com/vi/n2IHSJJU24w/maxresdefault.jp" value="3">Numbers</option>
+            </select>
 
-  </div>
-
-  <h4>Choose the number of levels you want to attempt</h4>
-  <input type="button" id="landing-page-btn" value="Start">
+        </div>
+        <button id="start" type="button" class="btn btn-primary btn-lg">Start</button>
+    </div>
 </div>
 
-<div id="game">
+<div class="container" id="game">
   <div id="progress">
-
+    gvbhnl
   </div>
   <div id="memory">
     <!-- Placeholder -->
@@ -121,8 +96,6 @@
     <div id="images">
 
     </div>
- 
-
   </div>
   <div id="remember">
     Enter what you saw:<br>
@@ -130,8 +103,9 @@
   </div>
 
 </div>
-<div id="result">
-  <div class="container" id="report-section">
+
+<div class="container" id="result">
+  <div class="" id="report-section">
     <div class="row justify-content-center mg">
       <div class="col-sm-6">
           <div class="display-4 mb-4">How You Did</div>
@@ -159,9 +133,12 @@
   </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+<!--JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
         integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
         crossorigin="anonymous"></script>
@@ -176,7 +153,16 @@
     $("#result").hide();
   });
 </script>
-<script type="text/javascript" src="scripts.js"></script>
+<script src="image-picker/image-picker.js"></script>
+<script src="js/main.js"></script>
+<script src="js/chart.js"></script>
+<script type="text/javascript" src="js/scripts.js"></script>
+<script>
+    $('.image-picker').imagepicker({
+      show_label: true
+    });
+</script>
 <script>if (window.module) module = window.module;</script>
+
 </body>
 </html>
