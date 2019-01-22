@@ -1,7 +1,11 @@
+var objectType = "words"
+var showTime = 5
+
 $(function () {
   $('#words-chip').on("click", function () {
     $('#words-chip').css("background-color", "#e66767")
     $('#numbers-chip').css("background-color", "#ea8685")
+    objectType = "words"
   })
 })
 
@@ -9,6 +13,7 @@ $(function () {
   $('#numbers-chip').on("click", function () {
     $('#numbers-chip').css("background-color", "#e66767")
     $('#words-chip').css("background-color", "#ea8685")
+    objectType = "numbers"
   })
 })
 
@@ -25,6 +30,8 @@ $(function () {
 // Goes from the landing page to the first memory game
 $(function () {
     $('#landing-page-btn').on("click", function () {
+        showTime = $("#time-input").val();
+        console.log(showTime);
         $(this).parent().hide();
         let parent = $(this).parent().parent().find('#game');
         $(parent).show();
