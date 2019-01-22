@@ -8,11 +8,15 @@ $(function () {
     });
 });
 
-$("#ex25").slider({
-	value: [1, 100],
-	ticks: [1, 50, 100],
-	lock_to_ticks: true
-});
+// Return to landing page when home button clicked
+$(function () {
+  $('#home-nav').on("click", function () {
+    $("#landing-page").show();
+    $("#game").hide();
+    $("#memory").hide();
+    $("#result").hide();
+  })
+})
 
 // Goes from the landing page to the first memory game
 $(function () {
