@@ -1,30 +1,156 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+<head>
     <meta charset="utf-8">
     <title>The Memory Game</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" language="javascript" src="./scripts.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <h1>Welcome to the Memory Game</h1>
-    <div class="landing_page">
+    <div id="fixed-content">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow" id="navbar">
+        <a class="navbar-brand" href="#">The Memory Game</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#rulesModal">
+                        <i class="far fa-question-circle"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-    </div>
-    <div class="game">
-      <div class="progress">
+    <div class="modal" tabindex="-1" role="dialog" id="rulesModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">How the Game Works</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
+    <div id="landing-page">
+      <h1>Welcome to the Memory Game</h1>
+      <h4>Choose the type of thing you want to memorise</h4>
+      <div class="container">
+        <div class="row form-group product-chooser">
+
+        	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+        		<div class="product-chooser-item selected same-height">
+        			<img src="http://kit8.net/images/detailed/1/Startup.png" class="img-rounded col-xs-4 col-sm-4 col-md-12 col-lg-12 inner-picture" alt="Images">
+                    <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
+        				<span class="title">Images</span>
+        				<input type="radio" name="product" value="mobile_desktop" checked="checked">
+        			</div>
+        			<div class="clear"></div>
+        		</div>
+        	</div>
+
+        	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+        		<div class="product-chooser-item same-height">
+        			<img src="https://media.glassdoor.com/sqll/432240/door-number-3-squarelogo-1475676434255.png" class="img-rounded col-xs-4 col-sm-4 col-md-12 col-lg-12 inner-picture" alt="Numbers">
+                    <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
+        				<span class="title">Numbers</span>
+        				<input type="radio" name="product" value="desktop">
+        			</div>
+        			<div class="clear"></div>
+        		</div>
+        	</div>
+
+        	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+        		<div class="product-chooser-item same-height">
+        			<img src="https://i.ytimg.com/vi/n2IHSJJU24w/maxresdefault.jpg" class="img-rounded col-xs-4 col-sm-4 col-md-12 col-lg-12 inner-picture" alt="Words">
+                    <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
+        				<span class="title">Words</span>
+        				<input type="radio" name="product" value="mobile">
+        			</div>
+        			<div class="clear"></div>
+        		</div>
+        	</div>
+
+        </div>
       </div>
-      <div class="rest">
 
-      </div>
-
-    </div>
-    <div class="result">
-
+      <h4>Choose the number of levels you want to attempt</h4>
+      <input type="button" id="landing-page-btn" value="Start">
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-  </body>
+<div id="game">
+    <div id="progress">
+
+    </div>
+    <div id="memory">
+        <!-- Placeholder -->
+        <div class="progress-bar">
+            <span class="progress-bar-fill" style="width: 30%"></span>
+        </div>
+        <br>
+        <div id="images">
+
+        </div>
+
+    </div>
+    <div id="remember">
+        Enter what you saw:<br>
+        <input type="text">
+    </div>
+
+</div>
+<div id="result">
+    <h1>Your results</h1>
+    <div id="left">
+        <img src=# alt="Results">
+    </div>
+    <div id="right">
+        You got ?/? correct
+    </div>
+    <input type="button" value="Try Again">
+    <input type="button" value="Show More">
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+<script>
+    $(function () {
+        $("#landing-page").show();
+        $("#game").hide();
+        $("#memory").hide();
+        $("#result").hide();
+    });
+</script>
+<script type="text/javascript" src="scripts.js"></script>
+<script>if (window.module) module = window.module;</script>
+</body>
 </html>
