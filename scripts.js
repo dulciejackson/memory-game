@@ -28,5 +28,9 @@ $(function () {
     $(parent).find('#memory').show();
     $(parent).find('#remember').hide();
     $('.progress-bar-fill').css('width', '0%')
+    $(parent).delay(5000).queue(function () {
+      $(this).find('#memory').hide();
+      $(this).find('#remember').show();
+    });
   });
 });
