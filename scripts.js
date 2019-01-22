@@ -30,20 +30,25 @@ $(function () {
     $(parent).find('#memory').show();
     $(parent).find('#remember').hide();
     $('.progress-bar-fill').css('width', '0%');
-    setTimeout(function() {show_remember_after_timeout(parent);}, 5000);
+    setTimeout(function () {
+      show_remember_after_timeout(parent);
+    }, 5000);
   });
 });
 
 $(function () {
-  $('#next-memory').on("click", function() {
+  $('#next-memory').on("click", function () {
     let parent = $(this).parent().parent();
-    if (iteration < 5) {
+    if (iteration < 3) {
       iteration++;
       $(parent).find('#memory').show();
       $(parent).find('#remember').hide();
-      $('.progress-bar-fill').css('width', '100%');
+      $(".progress-bar-fill").css({"width":"100%","transition":"none"});
+      $('.progress-bar-fill').css({"width": "0%", "transition": "width 5s ease-in-out"});
       //$('.progress-bar-fill').css('width', '0%')
-      setTimeout(function() {show_remember_after_timeout(parent);}, 5000);
+      setTimeout(function () {
+        show_remember_after_timeout(parent);
+      }, 5000);
     } else {
       $(parent).hide();
       $(parent).parent().find('#result').show();
