@@ -1,3 +1,5 @@
+var iteration = 0;
+
 // Highlights selected item type (images, numbers or words)
 $(function () {
   $('div.product-chooser').not('.disabled').find('div.product-chooser-item').on('click', function () {
@@ -22,15 +24,34 @@ $(function () {
 $(function () {
   $('#landing-page-btn').on("click", function () {
     $(this).parent().hide();
-    let parent = $(this).parent().parent().find('#game');
+    var parent = $(this).parent().parent().find('#game');
     $(parent).show();
     $(parent).find('#progress').show();
     $(parent).find('#memory').show();
     $(parent).find('#remember').hide();
-    $('.progress-bar-fill').css('width', '0%')
-    $(parent).delay(5000).queue(function () {
-      $(this).find('#memory').hide();
-      $(this).find('#remember').show();
-    });
+    $('.progress-bar-fill').css('width', '0%');
+    setTimeout(function() {show_remember_after_timeout(parent);}, 5000);
   });
 });
+
+$(function () {
+  $('#next-memory').on("click", function() {
+    let parent = $(this).parent().parent();
+    if (iteration < 5) {
+      iteration++;
+      $(parent).find('#memory').show();
+      $(parent).find('#remember').hide();
+      $('.progress-bar-fill').css('width', '100%');
+      //$('.progress-bar-fill').css('width', '0%')
+      setTimeout(function() {show_remember_after_timeout(parent);}, 5000);
+    } else {
+      $(parent).hide();
+      $(parent).parent().find('#result').show();
+    }
+  });
+});
+
+function show_remember_after_timeout(parent) {
+  $(parent).find('#memory').hide();
+  $(parent).find('#remember').show();
+}

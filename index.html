@@ -3,8 +3,6 @@
 <head>
   <meta charset="utf-8">
   <title>The Memory Game</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script type="text/javascript" language="javascript" src="./scripts.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
@@ -56,18 +54,21 @@
   </div>
 </div>
 
-    <div id="landing-page">
-      <h1>Welcome to the Memory Game</h1>
-      <h4>Choose the type of thing you want to memorise</h4>
-      <div class="container">
-        <img src="https://www.artsprofessional.co.uk/sites/artsprofessional.co.uk/files/styles/551_by_350_feature/public/main/articles/words_0.jpg?itok=gR4FHmuW" alt="Images" class="darkened fixed-size">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdDqbg9M2ZyTiLRAvftjqTTqsoESD6uDcNreMWQUtiGFfQGCRh" alt="Numbers" class="darkened fixed-size">
-      </div>
-
-    </div>
+<div id="landing-page">
+  <h1>Welcome to the Memory Game</h1>
+  <h4>Choose the type of thing you want to memorise</h4>
+  <div class="container">
+    <img
+      src="https://www.artsprofessional.co.uk/sites/artsprofessional.co.uk/files/styles/551_by_350_feature/public/main/articles/words_0.jpg?itok=gR4FHmuW"
+      alt="Images" class="darkened fixed-size">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdDqbg9M2ZyTiLRAvftjqTTqsoESD6uDcNreMWQUtiGFfQGCRh"
+         alt="Numbers" class="darkened fixed-size">
+  </div>
 
   <h4>Choose the number of levels you want to attempt</h4>
   <input type="button" id="landing-page-btn" value="Start">
+</div>
+
 
 <div id="game">
   <div id="progress">
@@ -87,6 +88,7 @@
   <div id="remember">
     Enter what you saw:<br>
     <input type="text">
+    <input type="button" value="Next" id="next-memory">
   </div>
 
 </div>
