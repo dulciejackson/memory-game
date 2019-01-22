@@ -32,6 +32,14 @@ div.container {
   max-width: 100%;
 }
 
+#landing-page {
+  padding-top: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 5%;
+  text-align: center;
+}
+
 .progress-bar {
   width: calc(100% - 6px);
   height: 20px;
