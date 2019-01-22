@@ -1,3 +1,17 @@
+html, body {margin: 0; height: 100%; overflow: hidden}
+
+body {
+  background-color: #fcfcfc;
+}
+
+h1 {
+  font-family: 'Arvo', serif;
+}
+
+h2, h3, h4, h5, p {
+  font-family: 'Open Sans', sans-serif;
+}
+
 div.clear {
   clear: both;
 }
@@ -33,11 +47,25 @@ div.container {
 }
 
 #landing-page {
+  height: 100%;
+}
+
+#landing-content {
   padding-top: 5%;
   padding-left: 10%;
   padding-right: 10%;
   padding-bottom: 5%;
   text-align: center;
+}
+
+#background-image {
+  float: right;
+  height: 1008px;
+  width: 714px;
+  background-image: url("landing-page-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 15px 15px #fcfcfc inset;
 }
 
 .progress-bar {

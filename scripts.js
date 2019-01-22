@@ -1,4 +1,5 @@
 var objectType = "words"
+var noOfLevels = 5
 var showTime = 5
 
 $(function () {
@@ -32,7 +33,7 @@ $(function () {
     $('#landing-page-btn').on("click", function () {
         showTime = $("#time-input").val();
         console.log(showTime);
-        $(this).parent().hide();
+        $(this).parent().parent().hide();
         let parent = $(this).parent().parent().find('#game');
         $(parent).show();
         $(parent).find('#progress').show();
