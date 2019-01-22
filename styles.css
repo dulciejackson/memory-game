@@ -54,6 +54,16 @@ div.product-chooser div.product-chooser-item input {
     visibility: hidden;
 }
 
+div.same-height {
+  height: 70%;
+  width: 50%;
+}
+
+img.inner-picture {
+  height: inherit;
+  width: auto;
+}
+
 .progress-bar {
     width: calc(100% - 6px);
     height: 20px;
