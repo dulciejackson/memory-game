@@ -27,7 +27,6 @@ $(function () {
     $(parent).find('#progress').show();
     $(parent).find('#memory').show();
     $(parent).find('#remember').hide();
-    alert("is this done?");
-    $('.progress-bar-fill').css('width', '100%')
+    $('.progress-bar-fill').css('width', '0%')
   });
 });
