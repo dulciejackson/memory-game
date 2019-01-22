@@ -3,15 +3,25 @@ div.clear {
 }
 
 img.darkened {
-  -webkit-filter: brightness(100%);
+  -webkit-filter: brightness(70%);
 }
 
 img.darkened:hover, img.selected {
-  -webkit-filter: brightness(70%);
+  -webkit-filter: brightness(100%);
 }
 
 img.fixed-size {
   width: 45%;
+}
+
+.chip {
+  display: inline-block;
+  padding: 0 25px;
+  height: 50px;
+  font-size: 16px;
+  line-height: 50px;
+  border-radius: 50px;
+  background-color: #ea8685;
 }
 
 div.container {
