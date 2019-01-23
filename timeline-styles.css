@@ -5,8 +5,9 @@
   justify-content: center;
 }
 
-.li {
-  transition: all 200ms ease-in;
+.container-timeline {
+  width: 50%;
+  margin: 10% auto auto auto;
 }
 
 .timestamp {
@@ -42,10 +43,10 @@
   transition: all 200ms ease-in;
 }
 
-.li.complete .status {
+.complete .status {
   border-top: 2px solid #66DC71;
 }
-.li.complete .status:before {
+.complete .status:before {
   background-color: #66DC71;
   border: none;
   transition: all 200ms ease-in;
@@ -55,12 +56,6 @@
   .timeline {
     list-style-type: none;
     display: block;
-  }
-
-  .li {
-    transition: all 200ms ease-in;
-    display: flex;
-    width: inherit;
   }
 
   .timestamp {
@@ -73,11 +68,4 @@
     transition: all 200ms ease-in;
   }
 }
-html, body {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  font-family: "Titillium Web", sans serif;
-  color: #758D96;
-}
+
