@@ -1,26 +1,27 @@
 $(function () {
-  $('#button1').on("click", function () {
-    $('#stage1').toggleClass("complete");
-  })
+	$('#stage1').on("click", function () {
+    $(this).toggleClass("complete");
+	})
   
-  $('#button2').on("click", function () {
-    $('#stage2').toggleClass("complete") 
-  })
+  $('#stage2').on("click", function () {
+// Used to toggle all 'li' DOMs
+//    $('li').toggleClass("complete")
+    $(this).toggleClass("complete");
+	})
   
-  $('#button3').on("click", function () {
-    $('#stage3').toggleClass("complete") 
-  })
+  $('#stage3').on("click", function () {
+    $(this).toggleClass("complete");
+	})
   
-  $('#button4').on("click", function () {
-    $('#stage4').toggleClass("complete") 
-  }) 
+  $('#stage4').on("click", function () {
+    $(this).toggleClass("complete");
+	}) 
   
-  $('#button5').on("click", function () {
-    $('#stage5').toggleClass("complete") 
-  })
+  $('#stage5').on("click", function () {
+    $(this).toggleClass("complete");
+	})
   
-  $('#button6').on("click", function () {
-    $('#stage6').toggleClass("complete") 
-  })
-  
+  $('#stage6').on("click", function () {
+    $(this).toggleClass("complete");
+	})
 })
