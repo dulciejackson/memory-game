@@ -42,4 +42,4 @@ $(function () {
         alert("is this done?")
         $('.progress-bar-fill').css('width', '100%')
     });
-});
+}); 
