@@ -55,34 +55,32 @@
   </div>
 </div>
 
-<div id="result"  class="container border" style="display: none">
-    <div id="report-section">
-      <div class="row justify-content-center mg">
-        <div class="col-sm-6">
-            <div class="display-4 mb-4">How You Did</div>
-        </div>
-      </div>
-      <div class="row justify-content-left">
-        <div class="col-sm-6">
-          <div class="canvas-container">
-            <canvas id="myChart" responsive=true></canvas>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="wrapper-details">
-              <h6 style="text-align:center"> Summary</h6>
-              <p>Total Correct: </p>
-              <p>Time taken: </p>
-          </div>
-        </div>
-      </div>
-      <div class="row justify-content-end">
-        <div class="col-sm-3 mt-4">
-            <button type="button" class="btn btn-success btn-lg rounded-0">  Try Again</button>
-        </div>
-    </div>
+<div id="result"  class="report-container" style="display: none"> 
+  <div class="row justify-content-center">
+    <div class="col-sm-6">
+        <div class="display-4 mb-4">How You Did</div>
     </div>
   </div>
+  <div class="row justify-content-left">
+    <div class="col-sm-6">
+      <div class="canvas-container">
+        <canvas id="myChart" responsive=true></canvas>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="wrapper-details">
+          <h6 style="text-align:center"> Summary</h6>
+          <p>Total Correct: </p>
+          <p>Time taken: </p>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-end">
+    <div class="col-sm-3 mt-4">
+        <button type="button" class="btn btn-success btn-lg rounded-0">  Try Again</button>
+    </div>
+  </div>
+</div>
 
 <!--JS-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script>
