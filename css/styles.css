@@ -71,7 +71,7 @@ div.container {
 
 .centre-form {
   margin: 0 auto;
-  width: 40%;
+  width: 27%;
 }
 
 #background-image {
@@ -109,4 +109,9 @@ div.container {
 #next-memory {
   position: relative;
   margin-top: 80%;
+}
+
+.remember-these {
+  font-family: 'Arvo', serif;
+  font-size: 30px;
 }
