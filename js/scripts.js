@@ -54,6 +54,8 @@ $(function () {
 
 $(function () {
   $('#next-memory').on("click", function () {
+    $(".guessing").remove();
+    $('#guess').attr("readonly", false);
     let parent = $(this).parent().parent();
     if (iteration < 3) {
       iteration++;
@@ -83,6 +85,8 @@ $(function () {
   $('#next-guess').on("click", function () {
     guess_amount++;
     if (guess_amount == (iteration + 1) * 2) {
+      $('#guess').attr("readonly", true);
+      guess_amount = 0;
       guesses += ",";
       results += ",";
       $(this).hide();
