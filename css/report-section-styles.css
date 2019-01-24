@@ -1,9 +1,11 @@
 /* No conflicts should arise with other CSS names */
 
 .report-container {
-    margin: 4% 10% 10% 10%;
-    padding: 5%;
-    box-shadow: 0px 0px 20px;
+  padding-top: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 5%;
+  text-align: center;
 }
 
 .canvas-container {
@@ -21,4 +23,3 @@
     font-size: 14px;
     margin-top: 8%;
 }
-

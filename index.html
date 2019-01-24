@@ -48,12 +48,15 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
-          <p>Modal body text goes here.</p>
+        <div class="modal-body" style="text-align: center;">
+          <p>Choose to memorise letters or numbers, the number of levels and how long to display each set of objects.</p>
+          <p>You'll start with 2 objects, increasing by 2 each level - try to remember as many as you can!</p>
+          <p>After the time limit is up, you'll be able to enter everything you remember, before continuing to the next level.</p>
+          <p>Once all levels are complete, you'll get to see detailed information about how well you did.</p>
+          <h2>Good luck!</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>
@@ -68,13 +71,13 @@
     <h5>I want to memorise</h5>
     <div class="container">
       <div class="chip" id="words-chip">
-        <p>Words</p>
+        <p>Letters</p>
       </div>
       <div class="chip" id="numbers-chip">
         <p>Numbers</p>
       </div>
     </div>
-    <h5 id="selectScreenNum">Select number of screens</h5>
+    <h5 id="selectScreenNum">Select number of levels</h5>
     <div class="container-progess-bar">
       <ul class="timeline" id="timeline">
         <li class="li" id="stage1">
@@ -122,7 +125,7 @@
       </ul>
 
     </div>
-    <h5>With <input id="time-input" type="number" class="form-control" aria-label="Time"
+    <h5>With <input id="time-input" type="number" value="5" class="form-control" aria-label="Time"
                     style="width: 12%; display: inline-block"> seconds to memorise each set of items</h5>
     <input class="btn btn-primary btn-lg" type="submit" id="landing-page-btn" value="Start">
   </div>
@@ -164,20 +167,16 @@
 </div>
 
 <div id="result" class="report-container" style="display: none">
-  <div class="row justify-content-center">
-    <div class="col-sm-6">
-      <div class="display-4 mb-4">How You Did</div>
-    </div>
-  </div>
+  <h1>How You Did</h1>
   <div class="row justify-content-left">
     <div class="col-sm-6">
       <div class="canvas-container">
         <canvas id="myChart" responsive=true></canvas>
       </div>
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-6">
       <div class="wrapper-details">
-        <h6 style="text-align:center"> Summary</h6>
+        <h3>Your Results</h5>
         <p>Total Correct: </p>
         <p>Time taken: </p>
       </div>
@@ -185,7 +184,7 @@
   </div>
   <div class="row justify-content-end">
     <div class="col-sm-3 mt-4">
-      <button type="button" class="btn btn-success btn-lg rounded-0">Try Again</button>
+      <button type="button" class="btn btn-success btn-lg">Try Again</button>
     </div>
   </div>
 </div>

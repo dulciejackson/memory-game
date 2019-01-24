@@ -115,3 +115,27 @@ div.container {
   font-family: 'Arvo', serif;
   font-size: 30px;
 }
+
+.report-container {
+  padding-top: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 5%;
+  text-align: center;
+}
+
+.canvas-container {
+    height: 300px;
+    margin: auto;
+    padding: 0%;
+}
+
+.display-4 {
+    text-align: center;
+    padding: 0%;
+}
+
+.wrapper-details {
+    font-size: 14px;
+    margin-top: 8%;
+}
