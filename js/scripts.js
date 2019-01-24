@@ -45,6 +45,7 @@ $(function () {
     $("#remember").hide();
     let current_string = random_string();
     add_variable_cards($("#images"), current_string);
+    $(".progress-bar-fill").css({"width": "100%", "transition": "none"});
     $('.progress-bar-fill').css({"width": "0%", "transition": "width " + showTime + "s ease-in-out"});
     setTimeout(function () {
       show_remember_after_timeout();
@@ -54,43 +55,37 @@ $(function () {
 
 $(function () {
   $('#next-memory').on("click", function () {
-    $(".guessing").remove();
+    $('.guessing').remove();
     $('#guess').attr("readonly", false);
-    let parent = $(this).parent().parent();
     if (iteration < noOfLevels) {
       iteration++;
-      $(parent).find('#memory').show();
-      $(parent).find('#remember').hide();
+      $('#memory').show();
+      $('#remember').hide();
       $('#next-guess').show();
-      $('#next-memory').hide();
+      $('#next-memory').show();
       $('.memoryCards').remove();
       let current_string = random_string();
       add_variable_cards($('#images'), current_string);
       $(".progress-bar-fill").css({"width": "100%", "transition": "none"});
       $('.progress-bar-fill').css({"width": "0%", "transition": "width " + showTime + "s ease-in-out"});
       setTimeout(function () {
-        show_remember_after_timeout(parent);
+        show_remember_after_timeout();
       }, showTime * 1000);
     } else {
-      $(parent).hide();
-      $(parent).parent().find('#result').show();
+      console.log(iteration);
+      $("#game").hide();
+      $('#result').show();
     }
   });
 });
 
 $(function () {
   var guess_amount = 0;
-  $('.guessing').remove();
-  $('#guess').val("");
   $('#next-guess').on("click", function () {
     guess_amount++;
     if (guess_amount == (iteration + 1) * 2) {
       $('#guess').attr("readonly", true);
       guess_amount = 0;
-      guesses += ",";
-      results += ",";
-      $(this).hide();
-      $('#next-memory').show();
     }
     var guess = $('#guess').val();
     guesses += guess;
