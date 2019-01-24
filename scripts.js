@@ -3,14 +3,25 @@ var results = "";
 var guesses = "";
 
 // Highlights selected item type (images, numbers or words)
-$(function () {
-  $('div.product-chooser').not('.disabled').find('div.product-chooser-item').on('click', function () {
-    $(this).parent().parent().find('div.product-chooser-item').removeClass('selected');
-    $(this).addClass('selected');
-    $(this).find('input[type="radio"]').prop("checked", true);
+var objectType = "words"
+var noOfLevels = 5
+var showTime = 5
 
-  });
-});
+$(function () {
+  $('#words-chip').on("click", function () {
+    $('#words-chip').css("background-color", "#e66767")
+    $('#numbers-chip').css("background-color", "#ea8685")
+    objectType = "words"
+  })
+})
+
+$(function () {
+  $('#numbers-chip').on("click", function () {
+    $('#numbers-chip').css("background-color", "#e66767")
+    $('#words-chip').css("background-color", "#ea8685")
+    objectType = "numbers"
+  })
+})
 
 // Return to landing page when home button clicked
 $(function () {
@@ -25,6 +36,7 @@ $(function () {
 // Goes from the landing page to the first memory game
 $(function () {
   $('#landing-page-btn').on("click", function () {
+    showTime = $("#time-input").val();
     $(this).parent().hide();
     var parent = $(this).parent().parent().find('#game');
     $(parent).show();
