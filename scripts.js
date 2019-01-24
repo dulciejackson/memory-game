@@ -38,7 +38,7 @@ $(function () {
   $('#landing-page-btn').on("click", function () {
     showTime = $("#time-input").val();
     $(this).parent().hide();
-    var parent = $(this).parent().parent().find('#game');
+    var parent = $('#game');
     $(parent).show();
     $(parent).find('#progress').show();
     $(parent).find('#memory').show();
