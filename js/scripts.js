@@ -1,11 +1,11 @@
-var iteration = 0;
 var results = "";
 var guesses = "";
 
 // Highlights selected item type (images, numbers or words)
-var objectType = "words"
-var noOfLevels = 5
-var showTime = 5
+var objectType = "words";
+var noOfLevels = 5;
+var showTime = 5;
+var iteration = 0;
 
 $(function () {
   $('#words-chip').on("click", function () {
@@ -36,9 +36,9 @@ $(function () {
 // Goes from the landing page to the first memory game
 $(function () {
   $('#landing-page-btn').on("click", function () {
-    showTime = $("#time-input").val();
+    showTime = 1000 * $("#time-input").val();
+    console.log(showTime);
     $(this).parent().parent().hide();
-    console.log("do I get here?");
     $("#game").show();
     $("#progress").show();
     $("#memory").show();
@@ -48,7 +48,7 @@ $(function () {
     $(".progress-bar-fill").css("width", "0%");
     setTimeout(function () {
       show_remember_after_timeout();
-    }, 5000);
+    }, showTime);
   });
 });
 
@@ -57,7 +57,7 @@ $(function () {
     $(".guessing").remove();
     $('#guess').attr("readonly", false);
     let parent = $(this).parent().parent();
-    if (iteration < 3) {
+    if (iteration < noOfLevels) {
       iteration++;
       $(parent).find('#memory').show();
       $(parent).find('#remember').hide();
@@ -70,7 +70,7 @@ $(function () {
       $('.progress-bar-fill').css({"width": "0%", "transition": "width 5s ease-in-out"});
       setTimeout(function () {
         show_remember_after_timeout(parent);
-      }, 5000);
+      }, showTime);
     } else {
       $(parent).hide();
       $(parent).parent().find('#result').show();
@@ -115,3 +115,30 @@ function random_string() {
   return (Math.random() + 1).toString(36).substring(2, 14)
 }
 
+// Show selected screen #
+function show(stage) {
+  $("#" + stage).addClass("complete");
+  noOfLevels = parseInt(stage[stage.length - 1], 10) - 1;
+}
+
+// Hide all possible selections except the one selected
+function hideExcept(stage) {
+  var screens = ["stage1", "stage2", "stage3", "stage4", "stage5", "stage6"];
+
+  screens = jQuery.grep(screens, function (value) {
+    return value != stage;
+  });
+
+  for (var i = 0; i < screens.length; i++) {
+    $("#" + screens[i]).removeClass("complete");
+  }
+}
+
+$(function () {
+
+  $('#stage1, #stage2, #stage3, #stage4, #stage5, #stage6').click(function () {
+    hideExcept(this.id);
+    show(this.id);
+  });
+
+})
