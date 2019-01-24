@@ -36,7 +36,7 @@ $(function () {
 // Goes from the landing page to the first memory game
 $(function () {
   $('#landing-page-btn').on("click", function () {
-    showTime = 1000 * $("#time-input").val();
+    showTime = $("#time-input").val();
     console.log(showTime);
     $(this).parent().parent().hide();
     $("#game").show();
@@ -45,10 +45,10 @@ $(function () {
     $("#remember").hide();
     let current_string = random_string();
     add_variable_cards($("#images"), current_string);
-    $(".progress-bar-fill").css("width", "0%");
+    $('.progress-bar-fill').css({"width": "0%", "transition": "width " + showTime + "s ease-in-out"});
     setTimeout(function () {
       show_remember_after_timeout();
-    }, showTime);
+    }, showTime * 1000);
   });
 });
 
@@ -67,10 +67,10 @@ $(function () {
       let current_string = random_string();
       add_variable_cards($('#images'), current_string);
       $(".progress-bar-fill").css({"width": "100%", "transition": "none"});
-      $('.progress-bar-fill').css({"width": "0%", "transition": "width 5s ease-in-out"});
+      $('.progress-bar-fill').css({"width": "0%", "transition": "width " + showTime + "s ease-in-out"});
       setTimeout(function () {
         show_remember_after_timeout(parent);
-      }, showTime);
+      }, showTime * 1000);
     } else {
       $(parent).hide();
       $(parent).parent().find('#result').show();
