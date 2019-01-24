@@ -63,6 +63,17 @@ div.container {
   width: 60%;
 }
 
+.central {
+  padding-top: 5%;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.centre-form {
+  margin: 0 auto;
+  width: 40%;
+}
+
 #background-image {
   float: right;
   height: 1008px;
@@ -89,4 +100,13 @@ div.container {
   border-radius: 3px;
   /*transition: width 250ms ease-in-out;*/
   transition: width 5s ease-in-out;
+}
+
+#answers {
+  height: 30px;
+}
+
+#next-memory {
+  position: relative;
+  margin-top: 80%;
 }
