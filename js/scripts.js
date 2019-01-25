@@ -158,3 +158,10 @@ function get_common_elems(original, guessed) {
   }
   return counter;
 }
+
+$(function () {
+  $('#try-again').on("click", function () {
+    console.log("try again");
+    location.reload();
+  })
+})

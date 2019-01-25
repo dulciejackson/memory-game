@@ -113,6 +113,7 @@ function random_string() {
 
 $(function () {
   $('#try-again').on("click", function () {
-    location.reload(true);
+    console.log("try again");
+    location.reload();
   })
 })
