@@ -67,7 +67,7 @@ function calculate_result() {
     totalResults += aResults[i].length;
   }
   create_chart();
-  show_total(best_level, best_percentage*100);
+  show_total(best_level + 1, best_percentage*100);
 }
 
 function show_total(bestLevel, bestPercentage) {
