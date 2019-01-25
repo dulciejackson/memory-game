@@ -110,10 +110,3 @@ function add_variable_cards(div, str) {
 function random_string() {
   return (Math.random() + 1).toString(36).substring(2, 14)
 }
-
-$(function () {
-  $('#try-again').on("click", function () {
-    console.log("try again");
-    location.reload();
-  })
-})

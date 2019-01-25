@@ -24,9 +24,34 @@ $(function () {
   })
 })
 
+$(function () {
+  $('#try-again').on("click", function () {
+    $('.guessing').remove();
+    $('.memoryCards').remove();
+    results = "";
+    guesses = "";
+    objectType = "words";
+    showTime = 5;
+    iteration = 0;
+    guess_amount = 0;
+    $("#landing-page").show();
+    $("#game").hide();
+    $("#memory").hide();
+    $("#result").hide();
+  })
+})
+
 // Return to landing page when home button clicked
 $(function () {
   $('#home-nav').on("click", function () {
+    $('.guessing').remove();
+    $('.memoryCards').remove();
+    results = "";
+    guesses = "";
+    objectType = "words";
+    showTime = 5;
+    iteration = 0;
+    guess_amount = 0;
     $("#landing-page").show();
     $("#game").hide();
     $("#memory").hide();
