@@ -1,5 +1,6 @@
 var aTotal = [];
 let totalResults = 0;
+let totalCorrect = 0;
 var ctx = document.getElementById("myChart").getContext('2d');
 
 function create_chart() {
@@ -31,6 +32,9 @@ function create_chart() {
       }]
     },
     options: {
+      legend: {
+        display: false,
+      },
       title: {
         display: false
       },
@@ -50,14 +54,25 @@ function create_chart() {
 function calculate_result() {
   let aGuesses = guesses.split(",");
   let aResults = results.split(",");
+  let best_level = 0;
+  let best_percentage = 0;
   for (let i = 0; i < aGuesses.length; i++) {
-    totalResults += aGuesses[i].length;
-    aTotal[i] = get_common_elems(aResults[i], aGuesses[i]) / aResults[i].length;
+    let correct = get_common_elems(aResults[i], aGuesses[i]);
+    aTotal[i] = correct / aResults[i].length;
+    if (best_percentage < aTotal[i]) {
+      best_level = i;
+      best_percentage = aTotal[i];
+    }
+    totalCorrect += correct;
+    totalResults += aResults[i].length;
   }
   create_chart();
-  show_total();
+  show_total(best_level, best_percentage*100);
 }
 
-function show_total() {
-  $("#total-correct").val(aTotal.reduce((a, b) => a + b, 0));
+function show_total(bestLevel, bestPercentage) {
+  $("#total-correct").text(totalCorrect);
+  $("#total-answers").text(totalResults);
+  $("#best-score").text(bestLevel);
+  $("#best-percentage-correct").text(bestPercentage);
 }
