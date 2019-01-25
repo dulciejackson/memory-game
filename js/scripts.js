@@ -58,9 +58,6 @@ $(function () {
   $('#next-memory').on("click", function () {
     guess_amount = 0;
     guesses += ",";
-    console.log(iteration);
-    console.log(guesses);
-    console.log(results);
     $('.guessing').remove();
     $('#guess').attr("readonly", false);
     if (iteration < noOfLevels) {
@@ -159,5 +156,5 @@ function get_common_elems(original, guessed) {
       }
     }
   }
-  return counter.toString();
+  return counter;
 }
