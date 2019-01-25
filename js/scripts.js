@@ -79,7 +79,7 @@ $(function () {
         show_remember_after_timeout();
       }, showTime * 1000);
     } else {
-      console.log(iteration);
+      calculate_result();
       $("#game").hide();
       $('#result').show();
     }
@@ -159,5 +159,5 @@ function get_common_elems(original, guessed) {
       }
     }
   }
-  var total = counter.toString();
+  return counter.toString();
 }
