@@ -4,11 +4,11 @@ body {
   background-color: #fcfcfc;
 }
 
-h1 {
+h1, .navbar-brand, .modal-title {
   font-family: 'Arvo', serif;
 }
 
-h2, h3, h4, h5, p {
+h2, h3, h4, h5, p, .nav-link, .modal-body {
   font-family: 'Open Sans', sans-serif;
 }
 
